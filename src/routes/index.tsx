@@ -43,6 +43,7 @@ function IndexInner() {
       <Places />
       <Corporate />
       <Reviews />
+      <Feedback />
       <BookForm />
       <FAQ />
       <Footer />
