@@ -55,7 +55,7 @@ export const dict: Dict = {
   "fleet.hours": { en: "hours", ta: "மணிநேரம்", hi: "घंटे" },
   "fleet.bookNow": { en: "Book Now", ta: "பதிவு செய்க", hi: "अभी बुक करें" },
   "fleet.upload": { en: "Upload Vehicle Photo", ta: "வாகன புகைப்படம் பதிவேற்றவும்", hi: "वाहन फ़ोटो अपलोड करें" },
-  "fleet.tankToTank": { en: "Tank to Tank", ta: "டேங்க் டு டேங்க்", hi: "टैंक टू टैंक" },
+  "fleet.tankToTank": { en: "Fuel (Full to Full)", ta: "எரிபொருள் (முழு முதல் முழு வரை)", hi: "ईंधन (फुल टू फुल)" },
   "fleet.day": { en: "day", ta: "நாள்", hi: "दिन" },
 
   // tariff

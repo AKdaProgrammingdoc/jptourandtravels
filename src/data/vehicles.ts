@@ -108,7 +108,7 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: "bus",
-    name: "Bus (Tank to Tank)",
+    name: "Bus (Fuel Full to Full)",
     seats: "40+",
     dayRent: 20000,
     bus: true,

@@ -312,6 +312,186 @@ const otherPlaces: Place[] = [
       { name: "Anjengo Fort", desc: "Historic British East India Company fort.", emoji: "🏰" },
     ],
   },
+  {
+    en: "Thiruvananthapuram",
+    ta: "திருவனந்தபுரம்",
+    hi: "तिरुवनंतपुरम",
+    image: "/media/thiruvananthapuram.jpg",
+    subtitle: { en: "Kerala's regal capital of golden temples, palm shores and lagoons.", ta: "தங்கக் கோயில்கள் & கடற்கரைகள் கொண்ட கேரளாவின் தலைநகரம்.", hi: "स्वर्ण मंदिरों, ताड़ तटों और लैगून वाली केरल की भव्य राजधानी।" },
+    spots: [
+      { name: "Sree Padmanabhaswamy Temple", desc: "World's richest temple — a Dravidian architectural marvel.", emoji: "🛕" },
+      { name: "Poovar Island", desc: "Serene estuary where river, sea and lake meet.", emoji: "🏝️" },
+      { name: "Kovalam Beach", desc: "Crescent-shaped beach with the iconic lighthouse.", emoji: "🏖️" },
+    ],
+  },
+];
+
+const templeCities: Place[] = [
+  {
+    en: "Trichy",
+    ta: "திருச்சி",
+    hi: "त्रिची",
+    image: "/media/trichy.png",
+    subtitle: { en: "Rockfort city of timeless temples on the Cauvery's banks.", ta: "காவிரிக் கரையின் காலம் கடந்த கோயில்களின் பாறைக்கோட்டை நகரம்.", hi: "कावेरी तट पर बसा रॉकफोर्ट और प्राचीन मंदिरों का नगर।" },
+    spots: [
+      { name: "Rockfort Temple", desc: "Hilltop Ganesha shrine reached by 437 rock-cut steps.", emoji: "🛕" },
+      { name: "Sri Ranganathaswamy Temple", desc: "Largest functioning Hindu temple complex in the world.", emoji: "🕉️" },
+      { name: "Jambukeswarar Temple", desc: "One of the Pancha Bhoota Sthalams — element of water.", emoji: "💧" },
+      { name: "Kallanai Dam", desc: "2000-year-old Grand Anicut, still in use today.", emoji: "🌊" },
+      { name: "St. Joseph's Church", desc: "Beautiful colonial-era Gothic-style cathedral.", emoji: "⛪" },
+      { name: "Vekkali Amman Temple", desc: "Unique roofless temple of Goddess Vekkali.", emoji: "🪔" },
+    ],
+  },
+  {
+    en: "Tanjavur",
+    ta: "தஞ்சாவூர்",
+    hi: "तंजावुर",
+    image: "/media/tanjavur.jpg",
+    subtitle: { en: "Chola heartland of art, bronze and the towering Brihadeeswarar temple.", ta: "சோழர் கலை, வெண்கலம் & பெரிய கோயிலின் தாயகம்.", hi: "चोल कला, कांस्य और भव्य बृहदीश्वर मंदिर की भूमि।" },
+    spots: [
+      { name: "Brihadeeswarar Temple", desc: "UNESCO Chola masterpiece with a 216 ft vimana.", emoji: "🛕" },
+      { name: "Thanjavur Palace", desc: "Royal Nayak-Maratha palace with art gallery.", emoji: "🏰" },
+      { name: "Saraswathi Mahal Library", desc: "One of the oldest libraries in Asia.", emoji: "📚" },
+      { name: "Schwartz Church", desc: "Historic 18th-century church built by Raja Serfoji.", emoji: "⛪" },
+      { name: "Sangeetha Mahal", desc: "Acoustically engineered royal music hall.", emoji: "🎶" },
+      { name: "Thanjavur Art Gallery", desc: "Stunning Chola-era bronze and stone sculptures.", emoji: "🖼️" },
+    ],
+  },
+  {
+    en: "Kumbakonam",
+    ta: "கும்பகோணம்",
+    hi: "कुंभकोणम",
+    image: "/media/kumbakonam.jpg",
+    subtitle: { en: "Temple town of sacred tanks and the grand Mahamaham festival.", ta: "புனித குளங்கள் & மகாமக விழாவின் கோயில் நகரம்.", hi: "पवित्र कुंडों और महामहम उत्सव वाला मंदिर नगर।" },
+    spots: [
+      { name: "Adi Kumbeswarar Temple", desc: "Ancient Shiva temple at the city's spiritual core.", emoji: "🛕" },
+      { name: "Sarangapani Temple", desc: "Towering Vaishnava shrine with chariot-shaped sanctum.", emoji: "🛕" },
+      { name: "Airavatesvara Temple", desc: "UNESCO Chola gem at nearby Darasuram.", emoji: "🏛️" },
+      { name: "Mahamaham Tank", desc: "Sacred tank where 9 holy rivers are believed to meet.", emoji: "💧" },
+      { name: "Ramaswamy Temple", desc: "Mural-filled shrine telling the Ramayana story.", emoji: "🪔" },
+      { name: "Swamimalai (nearby)", desc: "Famed Murugan temple just 8 km away.", emoji: "🕉️" },
+    ],
+  },
+  {
+    en: "Palani",
+    ta: "பழனி",
+    hi: "पलनी",
+    image: "/media/palani.jpg",
+    subtitle: { en: "Hilltop abode of Lord Murugan — one of the Arupadai Veedu.", ta: "முருகனின் ஆறுபடை வீடுகளில் ஒன்றான மலைக்கோயில்.", hi: "भगवान मुरुगन के छह पवित्र धामों में से एक पहाड़ी मंदिर।" },
+    spots: [
+      { name: "Palani Murugan Temple", desc: "Sacred hilltop shrine atop Sivagiri Hill.", emoji: "🛕" },
+      { name: "Winch & Rope-car Ride", desc: "Scenic cable car ride up to the temple.", emoji: "🚠" },
+      { name: "Idumban Hill", desc: "Smaller hill opposite the main temple — first stop for pilgrims.", emoji: "⛰️" },
+      { name: "Thiru Avinankudi Temple", desc: "Foothill temple — the original abode of Murugan.", emoji: "🪔" },
+      { name: "Palani Panchamirtham", desc: "World-famous GI-tagged sacred prasadam.", emoji: "🍯" },
+      { name: "Periyanayaki Amman Temple", desc: "Ancient shrine to Lord Murugan's mother.", emoji: "🕉️" },
+    ],
+  },
+  {
+    en: "Tiruchendur",
+    ta: "திருச்செந்தூர்",
+    hi: "तिरुचेंदूर",
+    image: "/media/tiruchendur.jpg",
+    subtitle: { en: "Seaside Murugan temple where the shrine meets the Bay of Bengal.", ta: "வங்க கடலருகே அமைந்த முருகன் கடற்கரை கோயில்.", hi: "बंगाल की खाड़ी के तट पर बसा भव्य मुरुगन मंदिर।" },
+    spots: [
+      { name: "Subramanya Swamy Temple", desc: "Only seashore temple among the six Murugan Padaiveedus.", emoji: "🛕" },
+      { name: "Tiruchendur Beach", desc: "Sacred shore for ritual bath before the temple visit.", emoji: "🏖️" },
+      { name: "Nazhi Kinaru", desc: "Mysterious sweet-water well right beside the sea.", emoji: "💧" },
+      { name: "Valli Cave", desc: "Cave where Lord Murugan is said to have met Valli.", emoji: "🕯️" },
+      { name: "Manapad Beach", desc: "Pristine nearby beach famed for windsurfing.", emoji: "🌊" },
+      { name: "Korkai", desc: "Ancient Pandya port town with archaeological roots.", emoji: "🏺" },
+    ],
+  },
+  {
+    en: "Pazhamudircholai",
+    ta: "பழமுதிர்சோலை",
+    hi: "पझमुदिरचोलाई",
+    image: "/media/pazhamudirchola.jpg",
+    subtitle: { en: "Lush forest-clad Murugan hill temple near Madurai.", ta: "மதுரை அருகே பசுமை சூழ்ந்த முருகன் மலைக்கோயில்.", hi: "मदुरै के पास हरे-भरे जंगल वाला मुरुगन पर्वत मंदिर।" },
+    spots: [
+      { name: "Pazhamudircholai Temple", desc: "Sixth and final Padaiveedu of Lord Murugan.", emoji: "🛕" },
+      { name: "Noopura Gangai", desc: "Sacred spring believed to flow from Vishnu's anklet.", emoji: "💧" },
+      { name: "Solaimalai Hill", desc: "Forested hill with breathtaking valley views.", emoji: "⛰️" },
+      { name: "Rakkayee Amman Temple", desc: "Powerful goddess shrine within the forest.", emoji: "🪔" },
+      { name: "Azhagar Hills Trek", desc: "Trails connecting to Kallazhagar temple below.", emoji: "🥾" },
+      { name: "Silambar Falls", desc: "Hidden seasonal cascade near the temple.", emoji: "🌊" },
+    ],
+  },
+  {
+    en: "Srirangam",
+    ta: "ஸ்ரீரங்கம்",
+    hi: "श्रीरंगम",
+    image: "/media/srirangam.jpg",
+    subtitle: { en: "Sacred island home to the world's largest functioning Vishnu temple.", ta: "உலகின் மிகப்பெரிய விஷ்ணு கோயில் அமைந்த புனித தீவு.", hi: "विश्व के सबसे बड़े सक्रिय विष्णु मंदिर का पवित्र द्वीप।" },
+    spots: [
+      { name: "Ranganathaswamy Temple", desc: "156-acre temple with 21 gopurams and 7 prakarams.", emoji: "🛕" },
+      { name: "Rajagopuram", desc: "Asia's tallest temple tower at 236 ft.", emoji: "🗼" },
+      { name: "1000-Pillar Hall", desc: "Marvel of Vijayanagara stone craftsmanship.", emoji: "🏛️" },
+      { name: "Amma Mandapam", desc: "Riverside ghat on the Cauvery for ritual bathing.", emoji: "🌊" },
+      { name: "Jambukeswarar Temple", desc: "Water-element temple right next to Srirangam.", emoji: "💧" },
+      { name: "Vellai Gopuram", desc: "Iconic pristine-white temple gateway.", emoji: "🕊️" },
+    ],
+  },
+  {
+    en: "Kanchipuram",
+    ta: "காஞ்சிபுரம்",
+    hi: "कांचीपुरम",
+    image: "/media/kanchipuram.jpg",
+    subtitle: { en: "City of a thousand temples and the legendary Kanjeevaram silk.", ta: "ஆயிரம் கோயில்கள் & பட்டுச் சேலைகளின் நகரம்.", hi: "हज़ार मंदिरों और प्रसिद्ध कांजीवरम रेशम का शहर।" },
+    spots: [
+      { name: "Ekambareswarar Temple", desc: "Vast Shiva temple with 3500-year-old mango tree.", emoji: "🛕" },
+      { name: "Kamakshi Amman Temple", desc: "Ancient Shakti Peetha of Goddess Kamakshi.", emoji: "🪔" },
+      { name: "Varadharaja Perumal Temple", desc: "Grand Vishnu temple of the Pallava era.", emoji: "🕉️" },
+      { name: "Kailasanathar Temple", desc: "Oldest Pallava sandstone temple in the city.", emoji: "🏛️" },
+      { name: "Kanchi Kudil", desc: "Heritage home preserving Tamil traditions.", emoji: "🏠" },
+      { name: "Silk Weaving Centres", desc: "Watch master weavers craft pure Kanjeevaram silk.", emoji: "🧵" },
+    ],
+  },
+  {
+    en: "Swamimalai",
+    ta: "சுவாமிமலை",
+    hi: "स्वामीमलै",
+    image: "/media/swamimalai.jpg",
+    subtitle: { en: "Fourth Padaiveedu where Murugan taught the meaning of 'Om' to Shiva.", ta: "முருகன் சிவனுக்கு பிரணவம் உபதேசித்த நான்காவது படைவீடு.", hi: "जहाँ मुरुगन ने शिव को 'ॐ' का अर्थ सिखाया — चौथा पडैवीडु।" },
+    spots: [
+      { name: "Swaminathaswamy Temple", desc: "Atop a 60-step artificial hill on the Cauvery.", emoji: "🛕" },
+      { name: "Bronze Icon Workshops", desc: "Home of the legendary Chola-style lost-wax bronzes.", emoji: "🗿" },
+      { name: "Cauvery River Banks", desc: "Sacred ghats perfect for sunset visits.", emoji: "🌅" },
+      { name: "Sakthi Vinayagar Temple", desc: "Famed Ganesha shrine within the main temple.", emoji: "🐘" },
+      { name: "Kumbakonam (nearby)", desc: "Cluster of temple gems just 8 km away.", emoji: "🛕" },
+      { name: "Darasuram (nearby)", desc: "UNESCO Airavatesvara Temple a short drive away.", emoji: "🏛️" },
+    ],
+  },
+  {
+    en: "Thiruthani",
+    ta: "திருத்தணி",
+    hi: "तिरुत्तनी",
+    image: "/media/thiruthani.jpg",
+    subtitle: { en: "Hilltop Murugan shrine of peace, the sixth Padaiveedu.", ta: "அமைதியின் முருகன் ஆலயம் — ஆறாவது படைவீடு.", hi: "शांति का मुरुगन पर्वत मंदिर — छठा पडैवीडु।" },
+    spots: [
+      { name: "Thiruthani Murugan Temple", desc: "Hilltop shrine reached by 365 steps.", emoji: "🛕" },
+      { name: "Saravana Poigai", desc: "Sacred tank linked to Murugan's birth legend.", emoji: "💧" },
+      { name: "Kandasamy Temple", desc: "Foothill shrine for Lord Subramanya.", emoji: "🪔" },
+      { name: "Veerataneswarar Temple", desc: "Ancient Shiva temple of great Saiva heritage.", emoji: "🕉️" },
+      { name: "Ettukai Amman Temple", desc: "Goddess shrine adored by locals.", emoji: "🌺" },
+      { name: "Thiruvallur (nearby)", desc: "Famed Veeraraghava Perumal temple close by.", emoji: "🛕" },
+    ],
+  },
+  {
+    en: "Sabarimala",
+    ta: "சபரிமலை",
+    hi: "सबरीमाला",
+    image: "/media/sabarimala.jpg",
+    subtitle: { en: "Forest-clad Ayyappan shrine reached by the sacred 18 golden steps.", ta: "புனிதமான பதினெட்டு படிகள் கொண்ட ஐயப்பன் வன ஆலயம்.", hi: "पवित्र 18 स्वर्ण सीढ़ियों वाला अयप्पन का वन मंदिर।" },
+    spots: [
+      { name: "Sabarimala Ayyappan Temple", desc: "One of the world's largest annual pilgrimages.", emoji: "🛕" },
+      { name: "Pathinettu Padi", desc: "The sacred 18 golden steps to the sanctum.", emoji: "🪜" },
+      { name: "Pamba River", desc: "Holy river for ritual bath before the climb.", emoji: "🌊" },
+      { name: "Makaravilakku", desc: "Celestial light festival witnessed by millions.", emoji: "✨" },
+      { name: "Malikappuram Temple", desc: "Adjacent shrine of Goddess Malikappurathamma.", emoji: "🌺" },
+      { name: "Neelimala Trek", desc: "Forest trail through the Periyar Tiger Reserve.", emoji: "🌲" },
+    ],
+  },
 ];
 
 function PlaceCard({ p, lang, idx, onClick }: { p: Place; lang: string; idx: number; onClick?: () => void }) {
@@ -499,6 +679,28 @@ export default function Places() {
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {otherPlaces.map((p, idx) => (
+              <PlaceCard key={p.en} p={p} lang={lang} idx={idx} onClick={() => setActive(p)} />
+            ))}
+          </div>
+        </div>
+
+        {/* Temple Cities */}
+        <div className="mt-20 reveal">
+          <div className="flex items-end justify-between flex-wrap gap-3">
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold">
+                <Sparkles className="h-3.5 w-3.5" />{" "}
+                {lang === "ta" ? "புனிதம்" : lang === "hi" ? "पवित्र" : "Sacred Trails"}
+              </span>
+              <h3 className="mt-2 text-2xl md:text-3xl font-bold">
+                {lang === "ta" ? "கோயில் நகரங்கள்" : lang === "hi" ? "मंदिर नगर" : "Temple Cities"}
+              </h3>
+            </div>
+            <div className="hidden md:block h-px flex-1 ml-6 bg-gradient-to-r from-gold/40 to-transparent" />
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {templeCities.map((p, idx) => (
               <PlaceCard key={p.en} p={p} lang={lang} idx={idx} onClick={() => setActive(p)} />
             ))}
           </div>
