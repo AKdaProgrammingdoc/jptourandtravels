@@ -312,6 +312,18 @@ const otherPlaces: Place[] = [
       { name: "Anjengo Fort", desc: "Historic British East India Company fort.", emoji: "🏰" },
     ],
   },
+  {
+    en: "Thiruvananthapuram",
+    ta: "திருவனந்தபுரம்",
+    hi: "तिरुवनंतपुरम",
+    image: "/media/thiruvananthapuram.jpg",
+    subtitle: { en: "Kerala's regal capital of golden temples, palm shores and lagoons.", ta: "தங்கக் கோயில்கள் & கடற்கரைகள் கொண்ட கேரளாவின் தலைநகரம்.", hi: "स्वर्ण मंदिरों, ताड़ तटों और लैगून वाली केरल की भव्य राजधानी।" },
+    spots: [
+      { name: "Sree Padmanabhaswamy Temple", desc: "World's richest temple — a Dravidian architectural marvel.", emoji: "🛕" },
+      { name: "Poovar Island", desc: "Serene estuary where river, sea and lake meet.", emoji: "🏝️" },
+      { name: "Kovalam Beach", desc: "Crescent-shaped beach with the iconic lighthouse.", emoji: "🏖️" },
+    ],
+  },
 ];
 
 function PlaceCard({ p, lang, idx, onClick }: { p: Place; lang: string; idx: number; onClick?: () => void }) {
