@@ -63,14 +63,23 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button
-            onClick={toggleLang}
-            aria-label="Toggle language"
-            className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-white/70 px-3 py-2 text-xs font-semibold text-gold transition-all duration-300 hover:bg-gold/10 hover:scale-105"
-          >
-            <Languages className="h-4 w-4" />
-            {nextLangLabel}
-          </button>
+          <div className="inline-flex items-center gap-1 rounded-full border border-gold/30 bg-white/70 p-1">
+            {langs.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                aria-label={`Switch to ${l.label}`}
+                className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-300 ${
+                  lang === l.code
+                    ? "gradient-gold-bg text-primary-foreground shadow-gold"
+                    : "text-gold hover:bg-gold/10"
+                }`}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
           <a
             href="https://wa.me/917397397991"
             target="_blank"
