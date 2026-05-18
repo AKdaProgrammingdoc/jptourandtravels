@@ -5,6 +5,7 @@ import Stats from "@/components/site/Stats";
 import Fleet from "@/components/site/Fleet";
 import Tariff from "@/components/site/Tariff";
 import Places from "@/components/site/Places";
+import Corporate from "@/components/site/Corporate";
 import LocalPackages from "@/components/site/LocalPackages";
 import Reviews from "@/components/site/Reviews";
 import BookForm from "@/components/site/BookForm";
