@@ -40,6 +40,7 @@ function IndexInner() {
       <Tariff />
       <LocalPackages />
       <Places />
+      <Corporate />
       <Reviews />
       <BookForm />
       <FAQ />
