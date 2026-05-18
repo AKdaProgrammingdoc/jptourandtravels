@@ -24,9 +24,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const toggleLang = () => setLang(lang === "en" ? "ta" : lang === "ta" ? "hi" : "en");
-  const nextLangLabel = lang === "en" ? "தமிழ்" : lang === "ta" ? "हिन्दी" : "English";
-  const nextLangShort = lang === "en" ? "த" : lang === "ta" ? "हि" : "EN";
+  const langs: { code: "en" | "ta" | "hi"; label: string; short: string }[] = [
+    { code: "en", label: "English", short: "EN" },
+    { code: "ta", label: "தமிழ்", short: "த" },
+    { code: "hi", label: "हिन्दी", short: "हि" },
+  ];
+
 
   return (
     <header
@@ -60,14 +63,23 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button
-            onClick={toggleLang}
-            aria-label="Toggle language"
-            className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-white/70 px-3 py-2 text-xs font-semibold text-gold transition-all duration-300 hover:bg-gold/10 hover:scale-105"
-          >
-            <Languages className="h-4 w-4" />
-            {nextLangLabel}
-          </button>
+          <div className="inline-flex items-center gap-1 rounded-full border border-gold/30 bg-white/70 p-1">
+            {langs.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                aria-label={`Switch to ${l.label}`}
+                className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-all duration-300 ${
+                  lang === l.code
+                    ? "gradient-gold-bg text-primary-foreground shadow-gold"
+                    : "text-gold hover:bg-gold/10"
+                }`}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
           <a
             href="https://wa.me/917397397991"
             target="_blank"
@@ -79,14 +91,22 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          <button
-            onClick={toggleLang}
-            aria-label="Toggle language"
-            className="rounded-md border border-gold/40 bg-white/70 px-2.5 py-2 text-xs font-semibold text-gold transition-all hover:bg-gold/10"
-          >
-            {nextLangShort}
-          </button>
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <div className="inline-flex items-center gap-0.5 rounded-full border border-gold/30 bg-white/70 p-0.5">
+            {langs.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                aria-label={`Switch to ${l.label}`}
+                className={`rounded-full px-2 py-1 text-[10px] font-semibold transition-all ${
+                  lang === l.code ? "gradient-gold-bg text-primary-foreground" : "text-gold"
+                }`}
+              >
+                {l.short}
+              </button>
+            ))}
+          </div>
+
           <button
             onClick={() => setOpen((v) => !v)}
             className="rounded-md border border-border bg-white/70 p-2 text-gold transition-colors hover:bg-gold/10"

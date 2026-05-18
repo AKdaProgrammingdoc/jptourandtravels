@@ -124,7 +124,17 @@ export const dict: Dict = {
   "rev.4": { en: "Ooty and Munnar in one trip — JP Tours and Travels handled all the logistics beautifully. Comfortable ride, transparent billing.", ta: "ஒரே பயணத்தில் ஊட்டி மற்றும் முன்னார் — JP Tours and Travels அனைத்தையும் சிறப்பாக கையாண்டது.", hi: "एक यात्रा में ऊटी और मुन्नार — JP Tours and Travels ने सभी व्यवस्थाएं खूबसूरती से संभालीं। आरामदायक सवारी, पारदर्शी बिलिंग।" },
   "rev.5": { en: "The Urbania I booked through JP Tours and Travels was premium-class. Friendly team and zero hassles, highly recommended for group tours.", ta: "JP Tours and Travels மூலம் பதிவு செய்த உர்பானியா பிரீமியம் வகுப்பு. நட்பான குழு, குழு பயணங்களுக்கு பரிந்துரைக்கிறேன்.", hi: "JP Tours and Travels के माध्यम से बुक किया गया अर्बेनिया प्रीमियम-क्लास था। मित्रवत टीम और शून्य परेशानी, समूह यात्राओं के लिए अत्यधिक अनुशंसित।" },
   "rev.6": { en: "Punctual, polite, and professional. JP Tours and Travels is now my go-to whenever I travel out of Madurai for business or family trips.", ta: "சரியான நேரம், மரியாதை, தொழில்முறை. மதுரையிலிருந்து வெளியே செல்லும் போது JP Tours and Travels எனது விருப்பம்.", hi: "समयनिष्ठ, विनम्र और पेशेवर। मदुरै से बाहर व्यवसाय या पारिवारिक यात्राओं के लिए JP Tours and Travels अब मेरी पहली पसंद है।" },
+
+  // feedback
+  "feedback.tag": { en: "Your Voice Matters", ta: "உங்கள் கருத்து முக்கியம்", hi: "आपकी आवाज़ मायने रखती है" },
+  "feedback.title1": { en: "Share your", ta: "உங்கள் கருத்தை", hi: "अपनी" },
+  "feedback.title2": { en: "feedback", ta: "பகிருங்கள்", hi: "प्रतिक्रिया साझा करें" },
+  "feedback.desc": { en: "Tell us about your journey with JP Tours and Travels — your review reaches us directly on WhatsApp.", ta: "JP Tours and Travels உடனான உங்கள் பயணத்தைப் பற்றி சொல்லுங்கள் — உங்கள் கருத்து நேரடியாக வாட்ஸ்அப்பில் வந்து சேரும்.", hi: "JP Tours and Travels के साथ अपनी यात्रा के बारे में बताएं — आपकी समीक्षा सीधे व्हाट्सएप पर हमारे पास पहुंचती है।" },
+  "feedback.rate": { en: "Rate your experience", ta: "உங்கள் அனுபவத்தை மதிப்பிடுங்கள்", hi: "अपने अनुभव को रेट करें" },
+  "feedback.placeholder": { en: "Share your experience, suggestions, or compliments...", ta: "உங்கள் அனுபவம், ஆலோசனைகள் அல்லது பாராட்டுகளை பகிருங்கள்...", hi: "अपना अनुभव, सुझाव या प्रशंसा साझा करें..." },
+  "feedback.send": { en: "Send Feedback on WhatsApp", ta: "வாட்ஸ்அப்பில் அனுப்புங்கள்", hi: "व्हाट्सएप पर भेजें" },
 };
+
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string }>({
   lang: "en",

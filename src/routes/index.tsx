@@ -8,6 +8,7 @@ import Places from "@/components/site/Places";
 import Corporate from "@/components/site/Corporate";
 import LocalPackages from "@/components/site/LocalPackages";
 import Reviews from "@/components/site/Reviews";
+import Feedback from "@/components/site/Feedback";
 import BookForm from "@/components/site/BookForm";
 import FAQ from "@/components/site/FAQ";
 import Footer from "@/components/site/Footer";
@@ -42,6 +43,7 @@ function IndexInner() {
       <Places />
       <Corporate />
       <Reviews />
+      <Feedback />
       <BookForm />
       <FAQ />
       <Footer />
