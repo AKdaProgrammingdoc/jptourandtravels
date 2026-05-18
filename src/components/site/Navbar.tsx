@@ -24,9 +24,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const toggleLang = () => setLang(lang === "en" ? "ta" : lang === "ta" ? "hi" : "en");
-  const nextLangLabel = lang === "en" ? "தமிழ்" : lang === "ta" ? "हिन्दी" : "English";
-  const nextLangShort = lang === "en" ? "த" : lang === "ta" ? "हि" : "EN";
+  const langs: { code: "en" | "ta" | "hi"; label: string; short: string }[] = [
+    { code: "en", label: "English", short: "EN" },
+    { code: "ta", label: "தமிழ்", short: "த" },
+    { code: "hi", label: "हिन्दी", short: "हि" },
+  ];
+
 
   return (
     <header
