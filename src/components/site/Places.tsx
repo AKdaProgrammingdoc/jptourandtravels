@@ -135,6 +135,48 @@ const otherPlaces: Place[] = [
     image: "/media/alleppey.jpg",
     subtitle: { en: "Serene backwaters of Kerala with houseboat cruises.", ta: "ஹவுஸ்போட் பயணங்கள் கொண்ட கேரளாவின் அமைதியான பின்னீர்கள்.", hi: "हाउसबोट क्रूज़ के साथ केरल के शांत बैकवॉटर्स।" },
   },
+  {
+    en: "Chennai",
+    ta: "சென்னை",
+    hi: "चेन्नई",
+    image: "/media/chennai.jpg",
+    subtitle: { en: "Coastal capital of Tamil Nadu blending heritage, beaches and culture.", ta: "பாரம்பரியம், கடற்கரைகள் & கலாச்சாரம் கலந்த தமிழ்நாட்டின் கடலோர தலைநகர்.", hi: "विरासत, समुद्र तटों और संस्कृति का संगम — तमिलनाडु की तटीय राजधानी।" },
+  },
+  {
+    en: "Tirupati",
+    ta: "திருப்பதி",
+    hi: "तिरुपति",
+    image: "/media/tirupati.jpg",
+    subtitle: { en: "Sacred hill town home to the revered Sri Venkateswara temple.", ta: "புனிதமான ஸ்ரீ வெங்கடேஸ்வரர் கோயில் அமைந்த மலை நகரம்.", hi: "पावन श्री वेंकटेश्वर मंदिर वाला पवित्र पहाड़ी नगर।" },
+  },
+  {
+    en: "Mysore",
+    ta: "மைசூர்",
+    hi: "मैसूर",
+    image: "/media/mysore.jpg",
+    subtitle: { en: "Royal city of palaces, silk, sandalwood and Dasara grandeur.", ta: "அரண்மனைகள், பட்டு & தசரா சிறப்பு கொண்ட அரச நகரம்.", hi: "महलों, रेशम, चंदन और दशहरा भव्यता का शाही शहर।" },
+  },
+  {
+    en: "Bangalore",
+    ta: "பெங்களூரு",
+    hi: "बैंगलोर",
+    image: "/media/bangalore.jpg",
+    subtitle: { en: "Garden city and tech capital with vibrant parks and skylines.", ta: "தோட்ட நகரம் & தொழில்நுட்ப தலைநகரம் — பசுமை & நவீனம் கலந்தது.", hi: "हरे-भरे बागानों और आधुनिक स्काईलाइन वाला उद्यान व तकनीक नगर।" },
+  },
+  {
+    en: "Coorg",
+    ta: "கூர்க்",
+    hi: "कूर्ग",
+    image: "/media/coorg.jpg",
+    subtitle: { en: "Misty hills of Karnataka famed for coffee estates and waterfalls.", ta: "காபி தோட்டங்கள் & நீர்வீழ்ச்சிகளுக்கு பெயர் பெற்ற கர்நாடகாவின் மலைகள்.", hi: "कॉफी बागानों और झरनों के लिए प्रसिद्ध कर्नाटक की धुंध भरी पहाड़ियाँ।" },
+  },
+  {
+    en: "Goa",
+    ta: "கோவா",
+    hi: "गोवा",
+    image: "/media/goa.jpg",
+    subtitle: { en: "Sun-kissed beaches, Portuguese charm and lively coastal vibes.", ta: "சூரிய ஒளி கடற்கரைகள் & போர்த்துகீசிய பாணி கலந்த கடலோர நகரம்.", hi: "धूप भरी बीचें, पुर्तगाली आकर्षण और जीवंत तटीय माहौल।" },
+  },
 ];
 
 function PlaceCard({ p, lang, idx }: { p: Place; lang: string; idx: number }) {
