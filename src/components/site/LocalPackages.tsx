@@ -3,6 +3,7 @@ import { MapPin, Plane } from "lucide-react";
 const local = [
   { name: "Innova", price: "3,300" },
   { name: "Crysta", price: "4,400" },
+  { name: "Hycross", price: "4,940" },
   { name: "Sedan", price: "3,100" },
   { name: "14+1 Tempo", price: "4,500" },
   { name: "18+1 Tempo", price: "5,760" },
@@ -12,6 +13,7 @@ const local = [
 const airport = [
   { name: "Innova", price: "2,000" },
   { name: "Crysta", price: "2,500" },
+  { name: "Hycross", price: "2,700" },
   { name: "Tempo", price: "2,500" },
   { name: "18+1", price: "3,000" },
   { name: "Urbania", price: "4,000" },
