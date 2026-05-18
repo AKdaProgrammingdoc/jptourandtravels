@@ -683,6 +683,28 @@ export default function Places() {
             ))}
           </div>
         </div>
+
+        {/* Temple Cities */}
+        <div className="mt-20 reveal">
+          <div className="flex items-end justify-between flex-wrap gap-3">
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold">
+                <Sparkles className="h-3.5 w-3.5" />{" "}
+                {lang === "ta" ? "புனிதம்" : lang === "hi" ? "पवित्र" : "Sacred Trails"}
+              </span>
+              <h3 className="mt-2 text-2xl md:text-3xl font-bold">
+                {lang === "ta" ? "கோயில் நகரங்கள்" : lang === "hi" ? "मंदिर नगर" : "Temple Cities"}
+              </h3>
+            </div>
+            <div className="hidden md:block h-px flex-1 ml-6 bg-gradient-to-r from-gold/40 to-transparent" />
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {templeCities.map((p, idx) => (
+              <PlaceCard key={p.en} p={p} lang={lang} idx={idx} onClick={() => setActive(p)} />
+            ))}
+          </div>
+        </div>
       </div>
 
       {active && <SpotsModal place={active} lang={lang} onClose={() => setActive(null)} />}
