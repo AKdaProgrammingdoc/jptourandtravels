@@ -177,6 +177,13 @@ const otherPlaces: Place[] = [
     image: "/media/goa.jpg",
     subtitle: { en: "Sun-kissed beaches, Portuguese charm and lively coastal vibes.", ta: "சூரிய ஒளி கடற்கரைகள் & போர்த்துகீசிய பாணி கலந்த கடலோர நகரம்.", hi: "धूप भरी बीचें, पुर्तगाली आकर्षण और जीवंत तटीय माहौल।" },
   },
+  {
+    en: "Varkala",
+    ta: "வர்க்கலா",
+    hi: "वर्कला",
+    image: "/media/varkala.jpg",
+    subtitle: { en: "Dramatic cliffside beach town with serene shores and seaside cafes.", ta: "செங்குத்து பாறை மீது அமைந்த அமைதியான கடற்கரை நகரம்.", hi: "नाटकीय चट्टानी तट और शांत समुद्र वाला सुंदर बीच नगर।" },
+  },
 ];
 
 function PlaceCard({ p, lang, idx }: { p: Place; lang: string; idx: number }) {
