@@ -1,4 +1,5 @@
-import { MapPin, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
+import { MapPin, Sparkles, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 type Place = {
@@ -7,6 +8,13 @@ type Place = {
   hi: string;
   image: string;
   subtitle: { en: string; ta: string; hi: string };
+  spots?: Spot[];
+};
+
+type Spot = {
+  name: string;
+  desc: string;
+  emoji?: string;
 };
 
 const maduraiPlaces: Place[] = [
@@ -85,6 +93,14 @@ const otherPlaces: Place[] = [
     hi: "रामेश्वरम",
     image: "/media/rameshwaram.jpg",
     subtitle: { en: "Sacred island town with Ramanathaswamy temple.", ta: "ராமநாதசுவாமி கோயில் உள்ள புனித தீவு.", hi: "रामनाथस्वामी मंदिर वाला पवित्र द्वीप नगर।" },
+    spots: [
+      { name: "Ramanathaswamy Temple", desc: "Sacred Jyotirlinga shrine with the longest temple corridor in India.", emoji: "🛕" },
+      { name: "Dhanushkodi Beach", desc: "Ghost town at land's end where two oceans meet.", emoji: "🏝️" },
+      { name: "Pamban Bridge", desc: "Iconic sea bridge connecting Rameshwaram to mainland.", emoji: "🌉" },
+      { name: "Agnitheertham", desc: "Holy seashore for ritual bathing before temple visit.", emoji: "🌊" },
+      { name: "APJ Abdul Kalam Memorial", desc: "Tribute to the Missile Man of India.", emoji: "🚀" },
+      { name: "Gandhamadhana Parvatham", desc: "Hilltop shrine with panoramic island views.", emoji: "⛰️" },
+    ],
   },
   {
     en: "Kodaikanal",
@@ -92,6 +108,14 @@ const otherPlaces: Place[] = [
     hi: "कोडाइकनाल",
     image: "/media/kodaikanal.jpg",
     subtitle: { en: "Princess of Hill Stations with misty lakes and valleys.", ta: "மூடுபனி ஏரிகள் கொண்ட மலைவாசஸ்தலங்களின் இளவரசி.", hi: "धुंध भरी झीलों और घाटियों वाली हिल स्टेशनों की राजकुमारी।" },
+    spots: [
+      { name: "Kodai Lake", desc: "Star-shaped lake perfect for boating and cycling.", emoji: "🚣" },
+      { name: "Coaker's Walk", desc: "Cliffside promenade with valley views.", emoji: "🚶" },
+      { name: "Pillar Rocks", desc: "Three giant granite pillars rising 400 ft tall.", emoji: "🪨" },
+      { name: "Bryant Park", desc: "Botanical garden with rare flowers and hybrids.", emoji: "🌸" },
+      { name: "Silver Cascade Falls", desc: "180 ft waterfall on the way up the hills.", emoji: "💧" },
+      { name: "Berijam Lake", desc: "Pristine reserve forest lake with mirror waters.", emoji: "🌲" },
+    ],
   },
   {
     en: "Kanyakumari",
@@ -99,6 +123,14 @@ const otherPlaces: Place[] = [
     hi: "कन्याकुमारी",
     image: "/media/kanyakumari.webp",
     subtitle: { en: "Land's end with sunrise & sunset over three oceans.", ta: "மூன்று கடல்களின் சங்கமம், சூரிய உதயம் & மறைவு.", hi: "तीन महासागरों के संगम पर सूर्योदय और सूर्यास्त।" },
+    spots: [
+      { name: "Vivekananda Rock Memorial", desc: "Iconic memorial on a rocky island in the sea.", emoji: "🪨" },
+      { name: "Thiruvalluvar Statue", desc: "133 ft tall statue of the Tamil poet-saint.", emoji: "🗿" },
+      { name: "Kanyakumari Beach", desc: "Witness sunrise and sunset from the same shore.", emoji: "🌅" },
+      { name: "Bhagavathy Amman Temple", desc: "Ancient temple of Goddess Kanya Kumari.", emoji: "🛕" },
+      { name: "Gandhi Memorial Mandapam", desc: "Memorial designed so sun rays fall on Gandhi's ashes.", emoji: "🕊️" },
+      { name: "Padmanabhapuram Palace", desc: "Largest wooden palace complex in Asia.", emoji: "🏛️" },
+    ],
   },
   {
     en: "Ooty",
@@ -106,6 +138,14 @@ const otherPlaces: Place[] = [
     hi: "ऊटी",
     image: "/media/ooty.webp",
     subtitle: { en: "Queen of Hill Stations with tea gardens & toy train.", ta: "தேயிலை தோட்டங்கள் கொண்ட மலைவாசஸ்தலங்களின் ராணி.", hi: "चाय बागानों और टॉय ट्रेन वाली हिल स्टेशनों की रानी।" },
+    spots: [
+      { name: "Nilgiri Mountain Railway", desc: "UNESCO heritage toy train through scenic hills.", emoji: "🚂" },
+      { name: "Ooty Botanical Gardens", desc: "55-acre garden with 1000+ plant species.", emoji: "🌿" },
+      { name: "Ooty Lake", desc: "Artificial lake perfect for boating.", emoji: "⛵" },
+      { name: "Doddabetta Peak", desc: "Highest peak in Nilgiris with telescope house.", emoji: "🏔️" },
+      { name: "Tea Museum & Factory", desc: "Learn the journey of tea from leaf to cup.", emoji: "🍵" },
+      { name: "Pykara Falls", desc: "Cascading falls amid shola forests.", emoji: "💦" },
+    ],
   },
   {
     en: "Munnar",
@@ -113,6 +153,14 @@ const otherPlaces: Place[] = [
     hi: "मुन्नार",
     image: "/media/munnar.jpg",
     subtitle: { en: "Lush green tea estates nestled in the Western Ghats.", ta: "மேற்கு தொடர்ச்சி மலையின் பசுமை தேயிலை தோட்டங்கள்.", hi: "पश्चिमी घाट में बसे हरे-भरे चाय बागान।" },
+    spots: [
+      { name: "Tea Gardens", desc: "Endless rolling carpets of emerald tea estates.", emoji: "🌱" },
+      { name: "Eravikulam National Park", desc: "Home to the endangered Nilgiri Tahr.", emoji: "🦌" },
+      { name: "Mattupetty Dam", desc: "Scenic reservoir for boating and views.", emoji: "🏞️" },
+      { name: "Echo Point", desc: "Natural echo phenomenon by the lakeside.", emoji: "🔊" },
+      { name: "Top Station", desc: "Highest viewpoint with breathtaking valley vistas.", emoji: "⛰️" },
+      { name: "Attukal Waterfalls", desc: "Picturesque cascade between Munnar and Pallivasal.", emoji: "💧" },
+    ],
   },
   {
     en: "Thekkady",
@@ -120,6 +168,14 @@ const otherPlaces: Place[] = [
     hi: "थेक्कडी",
     image: "/media/thekkady.webp",
     subtitle: { en: "Wildlife sanctuary famed for elephants and spice trails.", ta: "யானைகள் & வாசனை திரவியங்களுக்கு பிரசித்தி பெற்ற காப்பகம்.", hi: "हाथियों और मसाला मार्गों के लिए प्रसिद्ध वन्यजीव अभयारण्य।" },
+    spots: [
+      { name: "Periyar Wildlife Sanctuary", desc: "Spot elephants, bisons and tigers in the wild.", emoji: "🐘" },
+      { name: "Periyar Lake Cruise", desc: "Boat ride to view wildlife along the shoreline.", emoji: "🚤" },
+      { name: "Spice Plantations", desc: "Guided walks through cardamom and pepper estates.", emoji: "🌶️" },
+      { name: "Bamboo Rafting", desc: "Eco-adventure rafting through the reserve.", emoji: "🛶" },
+      { name: "Kathakali Performance", desc: "Traditional Kerala classical dance shows.", emoji: "🎭" },
+      { name: "Mangala Devi Temple", desc: "Ancient hilltop temple in the forest.", emoji: "🛕" },
+    ],
   },
   {
     en: "Coimbatore",
@@ -127,6 +183,14 @@ const otherPlaces: Place[] = [
     hi: "कोयंबटूर",
     image: "/media/coimbatore.avif",
     subtitle: { en: "Manchester of South India, gateway to the Nilgiris.", ta: "தென்னிந்தியாவின் மான்செஸ்டர், நீலகிரியின் நுழைவாயில்.", hi: "दक्षिण भारत का मैनचेस्टर, नीलगिरि का प्रवेश द्वार।" },
+    spots: [
+      { name: "Marudhamalai Temple", desc: "Hilltop Murugan temple with panoramic views.", emoji: "🛕" },
+      { name: "Adiyogi Shiva Statue", desc: "112 ft Shiva bust at Isha Yoga Center.", emoji: "🧘" },
+      { name: "VOC Park & Zoo", desc: "Family park with a toy train and mini zoo.", emoji: "🎡" },
+      { name: "Dhyanalinga", desc: "Powerful meditative space by Sadhguru.", emoji: "🕉️" },
+      { name: "Siruvani Waterfalls", desc: "Sweetest water falls amid lush forests.", emoji: "💧" },
+      { name: "Black Thunder", desc: "Asia's #1 themed water park.", emoji: "🎢" },
+    ],
   },
   {
     en: "Alleppey",
@@ -134,6 +198,14 @@ const otherPlaces: Place[] = [
     hi: "अलेप्पी",
     image: "/media/alleppey.jpg",
     subtitle: { en: "Serene backwaters of Kerala with houseboat cruises.", ta: "ஹவுஸ்போட் பயணங்கள் கொண்ட கேரளாவின் அமைதியான பின்னீர்கள்.", hi: "हाउसबोट क्रूज़ के साथ केरल के शांत बैकवॉटर्स।" },
+    spots: [
+      { name: "Houseboat Cruise", desc: "Overnight stay drifting through palm-fringed canals.", emoji: "🛥️" },
+      { name: "Alleppey Beach", desc: "Golden sands with a 137-year-old pier.", emoji: "🏖️" },
+      { name: "Vembanad Lake", desc: "Largest lake in Kerala — sunsets unmatched.", emoji: "🌅" },
+      { name: "Marari Beach", desc: "Quiet fishing village with pristine shores.", emoji: "🐚" },
+      { name: "Kumarakom Bird Sanctuary", desc: "Migratory birds along the backwaters.", emoji: "🦩" },
+      { name: "Snake Boat Races", desc: "Legendary Nehru Trophy boat race spectacle.", emoji: "🚣" },
+    ],
   },
   {
     en: "Chennai",
@@ -141,6 +213,14 @@ const otherPlaces: Place[] = [
     hi: "चेन्नई",
     image: "/media/chennai.jpg",
     subtitle: { en: "Coastal capital of Tamil Nadu blending heritage, beaches and culture.", ta: "பாரம்பரியம், கடற்கரைகள் & கலாச்சாரம் கலந்த தமிழ்நாட்டின் கடலோர தலைநகர்.", hi: "विरासत, समुद्र तटों और संस्कृति का संगम — तमिलनाडु की तटीय राजधानी।" },
+    spots: [
+      { name: "Marina Beach", desc: "Second longest urban beach in the world.", emoji: "🏖️" },
+      { name: "Kapaleeshwarar Temple", desc: "Iconic Dravidian temple in Mylapore.", emoji: "🛕" },
+      { name: "Fort St. George", desc: "First English fortress in India, now a museum.", emoji: "🏰" },
+      { name: "San Thome Basilica", desc: "Neo-Gothic church built over St. Thomas' tomb.", emoji: "⛪" },
+      { name: "Mahabalipuram", desc: "UNESCO shore temples and rock-cut monuments nearby.", emoji: "🗿" },
+      { name: "Government Museum", desc: "One of India's oldest museums with bronze gallery.", emoji: "🏛️" },
+    ],
   },
   {
     en: "Tirupati",
@@ -148,6 +228,14 @@ const otherPlaces: Place[] = [
     hi: "तिरुपति",
     image: "/media/tirupati.jpg",
     subtitle: { en: "Sacred hill town home to the revered Sri Venkateswara temple.", ta: "புனிதமான ஸ்ரீ வெங்கடேஸ்வரர் கோயில் அமைந்த மலை நகரம்.", hi: "पावन श्री वेंकटेश्वर मंदिर वाला पवित्र पहाड़ी नगर।" },
+    spots: [
+      { name: "Sri Venkateswara Temple", desc: "World's most visited Hindu pilgrimage site.", emoji: "🛕" },
+      { name: "Tirumala Hills", desc: "Seven sacred hills with breathtaking views.", emoji: "⛰️" },
+      { name: "Akasa Ganga Waterfall", desc: "Sacred waterfall used in temple rituals.", emoji: "💧" },
+      { name: "Sri Padmavathi Temple", desc: "Temple of Lord Venkateswara's consort.", emoji: "🪔" },
+      { name: "Silathoranam", desc: "Rare natural rock arch — geological wonder.", emoji: "🪨" },
+      { name: "ISKCON Tirupati", desc: "Serene Krishna temple in the city.", emoji: "🕉️" },
+    ],
   },
   {
     en: "Mysore",
@@ -155,6 +243,14 @@ const otherPlaces: Place[] = [
     hi: "मैसूर",
     image: "/media/mysore.jpg",
     subtitle: { en: "Royal city of palaces, silk, sandalwood and Dasara grandeur.", ta: "அரண்மனைகள், பட்டு & தசரா சிறப்பு கொண்ட அரச நகரம்.", hi: "महलों, रेशम, चंदन और दशहरा भव्यता का शाही शहर।" },
+    spots: [
+      { name: "Mysore Palace", desc: "Indo-Saracenic marvel lit by 100,000 bulbs.", emoji: "🏰" },
+      { name: "Chamundi Hills", desc: "Sacred hilltop temple of Goddess Chamundeshwari.", emoji: "⛰️" },
+      { name: "Brindavan Gardens", desc: "Musical fountains and terraced gardens.", emoji: "⛲" },
+      { name: "Mysore Zoo", desc: "One of India's oldest and richest zoological parks.", emoji: "🦁" },
+      { name: "St. Philomena's Cathedral", desc: "Neo-Gothic church with twin spires.", emoji: "⛪" },
+      { name: "Jaganmohan Palace", desc: "Royal art gallery of paintings and artifacts.", emoji: "🖼️" },
+    ],
   },
   {
     en: "Bangalore",
@@ -162,6 +258,14 @@ const otherPlaces: Place[] = [
     hi: "बैंगलोर",
     image: "/media/bangalore.jpg",
     subtitle: { en: "Garden city and tech capital with vibrant parks and skylines.", ta: "தோட்ட நகரம் & தொழில்நுட்ப தலைநகரம் — பசுமை & நவீனம் கலந்தது.", hi: "हरे-भरे बागानों और आधुनिक स्काईलाइन वाला उद्यान व तकनीक नगर।" },
+    spots: [
+      { name: "Lalbagh Botanical Garden", desc: "240-acre garden with a glass house.", emoji: "🌳" },
+      { name: "Cubbon Park", desc: "Green heart of the city with heritage buildings.", emoji: "🌲" },
+      { name: "Bangalore Palace", desc: "Tudor-style royal residence inspired by Windsor.", emoji: "🏰" },
+      { name: "ISKCON Temple", desc: "Stunning Krishna temple on a hilltop.", emoji: "🕉️" },
+      { name: "Vidhana Soudha", desc: "Majestic seat of Karnataka's state legislature.", emoji: "🏛️" },
+      { name: "Nandi Hills", desc: "Sunrise point and weekend getaway hilltop.", emoji: "🌄" },
+    ],
   },
   {
     en: "Coorg",
@@ -169,6 +273,14 @@ const otherPlaces: Place[] = [
     hi: "कूर्ग",
     image: "/media/coorg.jpg",
     subtitle: { en: "Misty hills of Karnataka famed for coffee estates and waterfalls.", ta: "காபி தோட்டங்கள் & நீர்வீழ்ச்சிகளுக்கு பெயர் பெற்ற கர்நாடகாவின் மலைகள்.", hi: "कॉफी बागानों और झरनों के लिए प्रसिद्ध कर्नाटक की धुंध भरी पहाड़ियाँ।" },
+    spots: [
+      { name: "Abbey Falls", desc: "Stunning falls amid coffee and spice estates.", emoji: "💧" },
+      { name: "Raja's Seat", desc: "Sunset viewpoint loved by Coorg royalty.", emoji: "🌇" },
+      { name: "Dubare Elephant Camp", desc: "Bathe and feed elephants by the river.", emoji: "🐘" },
+      { name: "Namdroling Monastery", desc: "Golden Tibetan monastery with giant Buddha statues.", emoji: "🛕" },
+      { name: "Talakaveri", desc: "Origin of the sacred River Kaveri.", emoji: "🌊" },
+      { name: "Coffee Plantations", desc: "Aromatic estate walks and tastings.", emoji: "☕" },
+    ],
   },
   {
     en: "Goa",
@@ -176,6 +288,14 @@ const otherPlaces: Place[] = [
     hi: "गोवा",
     image: "/media/goa.jpg",
     subtitle: { en: "Sun-kissed beaches, Portuguese charm and lively coastal vibes.", ta: "சூரிய ஒளி கடற்கரைகள் & போர்த்துகீசிய பாணி கலந்த கடலோர நகரம்.", hi: "धूप भरी बीचें, पुर्तगाली आकर्षण और जीवंत तटीय माहौल।" },
+    spots: [
+      { name: "Baga & Calangute Beach", desc: "Most vibrant beaches with water sports.", emoji: "🏖️" },
+      { name: "Basilica of Bom Jesus", desc: "UNESCO site holding St. Francis Xavier's remains.", emoji: "⛪" },
+      { name: "Fort Aguada", desc: "17th-century Portuguese fort with sea views.", emoji: "🏰" },
+      { name: "Dudhsagar Falls", desc: "Four-tiered 'Sea of Milk' waterfall.", emoji: "💧" },
+      { name: "Anjuna Flea Market", desc: "Bohemian market with crafts and food.", emoji: "🛍️" },
+      { name: "Palolem Beach", desc: "Crescent-shaped paradise in South Goa.", emoji: "🌴" },
+    ],
   },
   {
     en: "Varkala",
@@ -183,15 +303,33 @@ const otherPlaces: Place[] = [
     hi: "वर्कला",
     image: "/media/varkala.jpg",
     subtitle: { en: "Dramatic cliffside beach town with serene shores and seaside cafes.", ta: "செங்குத்து பாறை மீது அமைந்த அமைதியான கடற்கரை நகரம்.", hi: "नाटकीय चट्टानी तट और शांत समुद्र वाला सुंदर बीच नगर।" },
+    spots: [
+      { name: "Varkala Cliff", desc: "Dramatic red laterite cliffs over the Arabian Sea.", emoji: "🌅" },
+      { name: "Papanasam Beach", desc: "Sacred beach said to wash away sins.", emoji: "🏖️" },
+      { name: "Janardanaswamy Temple", desc: "2000-year-old temple overlooking the sea.", emoji: "🛕" },
+      { name: "Sivagiri Mutt", desc: "Pilgrimage center of social reformer Sree Narayana Guru.", emoji: "🕉️" },
+      { name: "Kappil Beach & Lake", desc: "Where the backwaters kiss the sea.", emoji: "🌊" },
+      { name: "Anjengo Fort", desc: "Historic British East India Company fort.", emoji: "🏰" },
+    ],
   },
 ];
 
-function PlaceCard({ p, lang, idx }: { p: Place; lang: string; idx: number }) {
+function PlaceCard({ p, lang, idx, onClick }: { p: Place; lang: string; idx: number; onClick?: () => void }) {
   const name = lang === "ta" ? p.ta : lang === "hi" ? p.hi : p.en;
   const sub = lang === "ta" ? p.subtitle.ta : lang === "hi" ? p.subtitle.hi : p.subtitle.en;
+  const clickable = !!onClick;
   return (
     <article
-      className="reveal group relative overflow-hidden rounded-2xl bg-white shadow-soft hover-lift"
+      onClick={onClick}
+      role={clickable ? "button" : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      onKeyDown={(e) => {
+        if (clickable && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
+      className={`reveal group relative overflow-hidden rounded-2xl bg-white shadow-soft hover-lift ${clickable ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold/60" : ""}`}
       style={{ transitionDelay: `${idx * 60}ms` }}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -205,6 +343,11 @@ function PlaceCard({ p, lang, idx }: { p: Place; lang: string; idx: number }) {
         <span className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/90 backdrop-blur transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 shadow-soft">
           <MapPin className="h-4 w-4 text-gold" />
         </span>
+        {clickable && (
+          <span className="absolute left-3 top-3 rounded-full bg-gold/95 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white shadow-soft opacity-0 group-hover:opacity-100 transition-opacity">
+            Explore
+          </span>
+        )}
         <div className="absolute inset-x-0 bottom-0 p-4 text-white">
           <h3 className="text-lg font-semibold drop-shadow-md">{name}</h3>
           <p className="mt-1 text-xs leading-snug text-white/90 line-clamp-2">{sub}</p>
@@ -214,8 +357,92 @@ function PlaceCard({ p, lang, idx }: { p: Place; lang: string; idx: number }) {
   );
 }
 
+function SpotsModal({ place, lang, onClose }: { place: Place; lang: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  const name = lang === "ta" ? place.ta : lang === "hi" ? place.hi : place.en;
+  const headingLabel =
+    lang === "ta" ? "பார்க்க வேண்டிய இடங்கள்" : lang === "hi" ? "घूमने योग्य स्थान" : "Top spots to visit in";
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 animate-fade-in"
+      onClick={onClose}
+      aria-modal="true"
+      role="dialog"
+    >
+      {/* Backdrop with animated gradient blobs */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-gold/25 blur-3xl animate-blob" />
+        <div className="absolute top-1/2 -right-24 h-[28rem] w-[28rem] rounded-full bg-amber-300/20 blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-20 left-1/3 h-80 w-80 rounded-full bg-rose-200/20 blur-3xl animate-blob animation-delay-4000" />
+      </div>
+
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative z-10 w-full max-w-5xl max-h-[90vh] overflow-hidden rounded-3xl bg-white shadow-2xl animate-scale-in flex flex-col"
+      >
+        {/* Hero header */}
+        <div className="relative h-44 md:h-56 overflow-hidden flex-shrink-0">
+          <img src={place.image} alt={place.en} className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/95 text-foreground hover:bg-white shadow-soft transition-transform hover:scale-110"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold">
+              <Sparkles className="h-3.5 w-3.5" /> {headingLabel}
+            </span>
+            <h3 className="mt-2 text-2xl md:text-4xl font-bold drop-shadow-md">{name}</h3>
+          </div>
+        </div>
+
+        {/* Spots grid */}
+        <div className="relative overflow-y-auto p-6 md:p-8">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {(place.spots ?? []).map((s, i) => (
+              <div
+                key={s.name}
+                className="group relative overflow-hidden rounded-2xl border border-gold/20 bg-gradient-to-br from-white to-amber-50/40 p-5 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-gold/40"
+                style={{
+                  animation: `fade-in 0.5s ease-out ${i * 70}ms both`,
+                }}
+              >
+                <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gold/10 blur-2xl transition-all duration-500 group-hover:bg-gold/20" />
+                <div className="relative">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{s.emoji ?? "📍"}</span>
+                    <h4 className="text-base font-semibold leading-snug">{s.name}</h4>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Places() {
   const { t, lang } = useI18n();
+  const [active, setActive] = useState<Place | null>(null);
+
   const inLabel = lang === "ta" ? "மதுரை" : lang === "hi" ? "मदुरै में" : "In Madurai";
   const inTitle = lang === "ta" ? "மதுரையில் பார்க்க வேண்டிய இடங்கள்" : lang === "hi" ? "मदुरै में घूमने के स्थान" : "Places to visit in Madurai";
   const beyondLabel = lang === "ta" ? "அதிகம்" : lang === "hi" ? "मदुरै से परे" : "Beyond Madurai";
@@ -272,11 +499,13 @@ export default function Places() {
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {otherPlaces.map((p, idx) => (
-              <PlaceCard key={p.en} p={p} lang={lang} idx={idx} />
+              <PlaceCard key={p.en} p={p} lang={lang} idx={idx} onClick={() => setActive(p)} />
             ))}
           </div>
         </div>
       </div>
+
+      {active && <SpotsModal place={active} lang={lang} onClose={() => setActive(null)} />}
     </section>
   );
 }
