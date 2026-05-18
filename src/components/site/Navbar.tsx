@@ -91,14 +91,22 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          <button
-            onClick={toggleLang}
-            aria-label="Toggle language"
-            className="rounded-md border border-gold/40 bg-white/70 px-2.5 py-2 text-xs font-semibold text-gold transition-all hover:bg-gold/10"
-          >
-            {nextLangShort}
-          </button>
+        <div className="flex items-center gap-1.5 lg:hidden">
+          <div className="inline-flex items-center gap-0.5 rounded-full border border-gold/30 bg-white/70 p-0.5">
+            {langs.map((l) => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                aria-label={`Switch to ${l.label}`}
+                className={`rounded-full px-2 py-1 text-[10px] font-semibold transition-all ${
+                  lang === l.code ? "gradient-gold-bg text-primary-foreground" : "text-gold"
+                }`}
+              >
+                {l.short}
+              </button>
+            ))}
+          </div>
+
           <button
             onClick={() => setOpen((v) => !v)}
             className="rounded-md border border-border bg-white/70 p-2 text-gold transition-colors hover:bg-gold/10"
