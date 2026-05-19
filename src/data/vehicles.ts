@@ -32,7 +32,7 @@ export const vehicles: Vehicle[] = [
     abovePerKm: 25,
     aboveLimit: 300,
     hourRent: { price: 3000, hours: 8, km: 80 },
-    image: "/media/hycross.jpg",
+    image: "/media/hycross.avif",
   },
   {
     id: "ertiga",
@@ -74,7 +74,7 @@ export const vehicles: Vehicle[] = [
     perKm: 22,
     abovePerKm: 30,
     aboveLimit: 300,
-    image: "/media/tempo-18.jpg",
+    image: "/media/tempo-18.avif",
   },
   {
     id: "urbania-12-14",
