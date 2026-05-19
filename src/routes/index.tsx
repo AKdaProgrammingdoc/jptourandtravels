@@ -9,6 +9,7 @@ import Corporate from "@/components/site/Corporate";
 import LocalPackages from "@/components/site/LocalPackages";
 import Reviews from "@/components/site/Reviews";
 import Feedback from "@/components/site/Feedback";
+import VVIP from "@/components/site/VVIP";
 import BookForm from "@/components/site/BookForm";
 import FAQ from "@/components/site/FAQ";
 import Footer from "@/components/site/Footer";
@@ -40,6 +41,7 @@ function IndexInner() {
       <Fleet />
       <Tariff />
       <LocalPackages />
+      <VVIP />
       <Places />
       <Corporate />
       <Reviews />
