@@ -331,7 +331,7 @@ const templeCities: Place[] = [
     en: "Trichy",
     ta: "திருச்சி",
     hi: "त्रिची",
-    image: "/media/trichy.png",
+    image: "/media/trichy-rockfort.jpg",
     subtitle: { en: "Rockfort city of timeless temples on the Cauvery's banks.", ta: "காவிரிக் கரையின் காலம் கடந்த கோயில்களின் பாறைக்கோட்டை நகரம்.", hi: "कावेरी तट पर बसा रॉकफोर्ट और प्राचीन मंदिरों का नगर।" },
     spots: [
       { name: "Rockfort Temple", desc: "Hilltop Ganesha shrine reached by 437 rock-cut steps.", emoji: "🛕" },
@@ -346,7 +346,7 @@ const templeCities: Place[] = [
     en: "Tanjavur",
     ta: "தஞ்சாவூர்",
     hi: "तंजावुर",
-    image: "/media/tanjavur.jpg",
+    image: "/media/trichy.png",
     subtitle: { en: "Chola heartland of art, bronze and the towering Brihadeeswarar temple.", ta: "சோழர் கலை, வெண்கலம் & பெரிய கோயிலின் தாயகம்.", hi: "चोल कला, कांस्य और भव्य बृहदीश्वर मंदिर की भूमि।" },
     spots: [
       { name: "Brihadeeswarar Temple", desc: "UNESCO Chola masterpiece with a 216 ft vimana.", emoji: "🛕" },
@@ -361,7 +361,7 @@ const templeCities: Place[] = [
     en: "Kumbakonam",
     ta: "கும்பகோணம்",
     hi: "कुंभकोणम",
-    image: "/media/kumbakonam.jpg",
+    image: "/media/tanjavur.jpg",
     subtitle: { en: "Temple town of sacred tanks and the grand Mahamaham festival.", ta: "புனித குளங்கள் & மகாமக விழாவின் கோயில் நகரம்.", hi: "पवित्र कुंडों और महामहम उत्सव वाला मंदिर नगर।" },
     spots: [
       { name: "Adi Kumbeswarar Temple", desc: "Ancient Shiva temple at the city's spiritual core.", emoji: "🛕" },
@@ -376,7 +376,7 @@ const templeCities: Place[] = [
     en: "Palani",
     ta: "பழனி",
     hi: "पलनी",
-    image: "/media/palani.jpg",
+    image: "/media/kumbakonam.jpg",
     subtitle: { en: "Hilltop abode of Lord Murugan — one of the Arupadai Veedu.", ta: "முருகனின் ஆறுபடை வீடுகளில் ஒன்றான மலைக்கோயில்.", hi: "भगवान मुरुगन के छह पवित्र धामों में से एक पहाड़ी मंदिर।" },
     spots: [
       { name: "Palani Murugan Temple", desc: "Sacred hilltop shrine atop Sivagiri Hill.", emoji: "🛕" },
@@ -391,7 +391,7 @@ const templeCities: Place[] = [
     en: "Tiruchendur",
     ta: "திருச்செந்தூர்",
     hi: "तिरुचेंदूर",
-    image: "/media/tiruchendur.jpg",
+    image: "/media/palani.jpg",
     subtitle: { en: "Seaside Murugan temple where the shrine meets the Bay of Bengal.", ta: "வங்க கடலருகே அமைந்த முருகன் கடற்கரை கோயில்.", hi: "बंगाल की खाड़ी के तट पर बसा भव्य मुरुगन मंदिर।" },
     spots: [
       { name: "Subramanya Swamy Temple", desc: "Only seashore temple among the six Murugan Padaiveedus.", emoji: "🛕" },
@@ -406,7 +406,7 @@ const templeCities: Place[] = [
     en: "Pazhamudircholai",
     ta: "பழமுதிர்சோலை",
     hi: "पझमुदिरचोलाई",
-    image: "/media/pazhamudirchola.jpg",
+    image: "/media/tiruchendur.jpg",
     subtitle: { en: "Lush forest-clad Murugan hill temple near Madurai.", ta: "மதுரை அருகே பசுமை சூழ்ந்த முருகன் மலைக்கோயில்.", hi: "मदुरै के पास हरे-भरे जंगल वाला मुरुगन पर्वत मंदिर।" },
     spots: [
       { name: "Pazhamudircholai Temple", desc: "Sixth and final Padaiveedu of Lord Murugan.", emoji: "🛕" },
