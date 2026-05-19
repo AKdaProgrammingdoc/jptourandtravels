@@ -15,7 +15,7 @@ const airport = [
   { name: "Crysta", price: "2,500" },
   { name: "Hycross", price: "2,700" },
   { name: "Tempo", price: "2,500" },
-  { name: "18+1", price: "3,000" },
+  { name: "Tempo 18+1", price: "3,000" },
   { name: "Urbania", price: "4,000" },
   { name: "Sedan", price: "1,800" },
 ];
